@@ -24,7 +24,7 @@ namespace GSB_gestion_cloture
 			}
 			else
             {
-				return (moisPrecedent).ToString;
+				return (moisPrecedent).ToString();
             }
         }
 
@@ -43,7 +43,7 @@ namespace GSB_gestion_cloture
             }
             else
             {
-                return (moisPrecedent).ToString;
+                return (moisPrecedent).ToString();
             }
         }
 
@@ -62,7 +62,7 @@ namespace GSB_gestion_cloture
             }
             else
             {
-                return (moisSuivant).ToString;
+                return (moisSuivant).ToString();
             }
         }
 
@@ -82,7 +82,7 @@ namespace GSB_gestion_cloture
             }
             else
             {
-                return (moisSuivant).ToString;
+                return (moisSuivant).ToString();
             }
         }
 
