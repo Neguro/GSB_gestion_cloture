@@ -28,7 +28,7 @@ namespace GSB_gestion_cloture
         }
 
         /// <summary>
-        /// Accesseur à la propre istance de la classe
+        /// Accesseur à la propre instance de la classe
         /// En mode static pour ne pas avoir à instancier la classe .....
         /// Du coup l'attribut instance sera en static
         /// </summary>

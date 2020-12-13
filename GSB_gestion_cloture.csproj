@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassesMetier\Bdd.cs" />
+    <Compile Include="ClassesMetier\GestionDate.cs" />
     <Compile Include="Service1.cs">
       <SubType>Component</SubType>
     </Compile>
