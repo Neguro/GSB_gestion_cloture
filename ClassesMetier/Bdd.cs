@@ -47,7 +47,9 @@ namespace GSB_gestion_cloture
             try
             {
                 if (this.connexion != null && this.connexion.State == System.Data.ConnectionState.Closed)
+                {
                     this.connexion.Open();
+                }
             }
             catch (MySqlException ex)
             {
@@ -66,5 +68,90 @@ namespace GSB_gestion_cloture
                 Console.WriteLine(ex.Message);
             }
         }
+
+        public void Find(string colonnes, string table, string condition)
+        {
+            string sql = $@"Select {colonnes} from {table} where {condition}";
+            MySqlCommand command = new MySqlCommand(sql, connexion);
+            try
+            {
+                command.ExecuteScalar();
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Find(string colonnes, string table)
+        {
+            string sql = $@"Select {colonnes} from {table}";
+            MySqlCommand command = new MySqlCommand(sql, connexion);
+            try
+            {      
+                command.ExecuteScalar();
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void FindAll(string table)
+        {
+            string sql = $@"Select * from {table}";
+            MySqlCommand command = new MySqlCommand(sql, connexion);
+            try
+            {            
+                command.ExecuteScalar();
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void FindAll(string table, string conditions)
+        {
+            string sql = $@"Select * from {table} where {conditions}";
+            MySqlCommand command = new MySqlCommand(sql, connexion);
+            try
+            {
+                command.ExecuteScalar();
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Delete(string table, string condition)
+        {
+            string sql = $@"Delete from {table} where {condition}";
+            MySqlCommand command = new MySqlCommand(sql, connexion);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Update(string table, string colonne, string valeur, string condition)
+        {
+            string sql = $@"Update {table} set {colonne} = {valeur} where {condition}"; 
+            MySqlCommand command = new MySqlCommand(sql,connexion);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception(ex.Message); 
+            }
+        }
+
     }
 }

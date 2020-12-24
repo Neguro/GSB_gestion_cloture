@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -14,7 +13,7 @@ namespace GSB_gestion_cloture
         /// Retourne le mois precedent 
         /// </summary>
         /// <returns>Une chaine de caractere sous format de deux chiffres </returns>
-		static string getMoisPrecedent()
+		public static string getMoisPrecedent()
         {
 			int moisPrecedent = DateTime.Now.Month - 1;
 			if (moisPrecedent < 10)
@@ -33,7 +32,7 @@ namespace GSB_gestion_cloture
         /// </summary>
         /// <param name="uneDate">La date dont on veut le mois précédent</param>
         /// <returns>Une chaine de caractere sous format de deux chiffres</returns>
-        static string getMoisPrecedent(DateTime uneDate)
+        public static string getMoisPrecedent(DateTime uneDate)
         {
             int moisPrecedent = uneDate.Month - 1;
             if (moisPrecedent < 10)
@@ -51,7 +50,7 @@ namespace GSB_gestion_cloture
         /// Retourne le mois suivant
         /// </summary>
         /// <returns>Une chaine de caractere sous format de deux chiffres</returns>
-        static string getMoisSuivant()
+        public static string getMoisSuivant()
         {
             var date = DateTime.Now.AddMonths(1);
             int moisSuivant = date.Month;
@@ -71,7 +70,7 @@ namespace GSB_gestion_cloture
         /// </summary>
         /// <param name="uneDate">La date dont on veut le mois suivant</param>
         /// <returns>Une chaine de caractere sous format de deux chiffres</returns>
-        static string getMoisSuivant(DateTime uneDate)
+        public static string getMoisSuivant(DateTime uneDate)
         {
             uneDate = uneDate.AddMonths(1);
             int moisSuivant = uneDate.Month;
@@ -92,7 +91,7 @@ namespace GSB_gestion_cloture
         /// <param name="jour1"></param>
         /// <param name="jour2"></param>
         /// <returns>Un booeléen</returns>
-        static bool entre(int jour1, int jour2)
+        public static bool entre(int jour1, int jour2)
         {
            return DateTime.Now.Day >= jour1 && DateTime.Now.Day < jour2;
         }
@@ -104,7 +103,7 @@ namespace GSB_gestion_cloture
         /// <param name="jour2"></param>
         /// <param name="uneDate"></param>
         /// <returns>Un booléen</returns>
-        static bool entre(int jour1, int jour2, DateTime uneDate)
+        public static bool entre(int jour1, int jour2, DateTime uneDate)
         {
             return uneDate.Day >= (jour1) && uneDate.Day < jour2;
         }
