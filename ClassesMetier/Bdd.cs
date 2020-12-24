@@ -72,7 +72,7 @@ namespace GSB_gestion_cloture
         public void Find(string colonnes, string table, string condition)
         {
             string sql = $@"Select {colonnes} from {table} where {condition}";
-            MySqlCommand command = new MySqlCommand(sql, connexion);
+            MySqlCommand command = new MySqlCommand(sql, getInstance().connexion);
             try
             {
                 command.ExecuteScalar();
@@ -86,7 +86,7 @@ namespace GSB_gestion_cloture
         public void Find(string colonnes, string table)
         {
             string sql = $@"Select {colonnes} from {table}";
-            MySqlCommand command = new MySqlCommand(sql, connexion);
+            MySqlCommand command = new MySqlCommand(sql, getInstance().connexion);
             try
             {      
                 command.ExecuteScalar();
@@ -100,7 +100,7 @@ namespace GSB_gestion_cloture
         public void FindAll(string table)
         {
             string sql = $@"Select * from {table}";
-            MySqlCommand command = new MySqlCommand(sql, connexion);
+            MySqlCommand command = new MySqlCommand(sql, getInstance().connexion);
             try
             {            
                 command.ExecuteScalar();
@@ -114,7 +114,7 @@ namespace GSB_gestion_cloture
         public void FindAll(string table, string conditions)
         {
             string sql = $@"Select * from {table} where {conditions}";
-            MySqlCommand command = new MySqlCommand(sql, connexion);
+            MySqlCommand command = new MySqlCommand(sql, getInstance().connexion);
             try
             {
                 command.ExecuteScalar();
@@ -128,7 +128,7 @@ namespace GSB_gestion_cloture
         public void Delete(string table, string condition)
         {
             string sql = $@"Delete from {table} where {condition}";
-            MySqlCommand command = new MySqlCommand(sql, connexion);
+            MySqlCommand command = new MySqlCommand(sql, getInstance().connexion);
             try
             {
                 command.ExecuteNonQuery();
@@ -142,7 +142,7 @@ namespace GSB_gestion_cloture
         public void Update(string table, string colonne, string valeur, string condition)
         {
             string sql = $@"Update {table} set {colonne} = {valeur} where {condition}"; 
-            MySqlCommand command = new MySqlCommand(sql,connexion);
+            MySqlCommand command = new MySqlCommand(sql, getInstance().connexion);
             try
             {
                 command.ExecuteNonQuery();

@@ -8,6 +8,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using MySql.Data;
 
 namespace GSB_gestion_cloture
 {
@@ -40,9 +41,8 @@ namespace GSB_gestion_cloture
         /// <summary>
         /// Fonction qui gére les tâches demandées 
         /// </summary>
-        private void Tasks(object source, ElapsedEventArgs e)
+        public void Tasks(object source, ElapsedEventArgs e)
         {
-            
             try
             {
                 string moisPrecedent = DateTime.Now.Year + GestionDate.getMoisPrecedent();
