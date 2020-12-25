@@ -17,7 +17,7 @@ jour du mois. Cette clôture sera réalisée via cette application avec les moda
     C:\Users\User\source\repos\dussartcorp\-GSB_gestion_cloture\bin\Release
   ```
   cd C:\Users\User\source\repos\dussartcorp\-GSB_gestion_cloture\bin\Release
-  - Dans de cmd executer la commande suivante pour installer le service. : 
+  - Dans de cmd éxecuter la commande suivante pour installer le service. : 
     ```shell
       C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe GSB_gestion_cloture.exe
     ```
