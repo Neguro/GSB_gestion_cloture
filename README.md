@@ -12,15 +12,15 @@ jour du mois. Cette clôture sera réalisée via cette application avec les moda
 ## Procédure pour installer le service : 
   - Lancer le cmd en mode administrateur.
   - Déplacer vous dans le repertoire bin/release du projet. 
-  ex : 
+  
+Exemple : 
   ```shell
     C:\Users\User\source\repos\dussartcorp\-GSB_gestion_cloture\bin\Release
   ```
-  cd C:\Users\User\source\repos\dussartcorp\-GSB_gestion_cloture\bin\Release
-  - Dans de cmd éxecuter la commande suivante pour installer le service. : 
-    ```shell
-      C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe GSB_gestion_cloture.exe
-    ```
+  - Dans de cmd éxecuter la commande suivante pour installer le service : 
+```shell
+   C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe GSB_gestion_cloture.exe
+```
   - Dans la barre de recherche de votre barre de tâches taper : Services et cliquer sur le programme.
   - Cherchez ensuite le service suivant : Gsb gestion cloture et cliquer sur démarrer (à noter que le service se relance toutes les heures).
   
