@@ -15,10 +15,7 @@ namespace GSB_gestion_cloture
 {
     public partial class Service1 : ServiceBase
     {
-        // pour gerer le déclanchement de notre tache avec un thread plutôt qu'un timer. 
-        private ThreadStart tsTask;
-        private Thread myTask;
-        private Bdd bdd = Bdd.getInstance();
+        private static Bdd bdd = Bdd.getInstance();
         public Service1()
         {
             InitializeComponent();
@@ -29,9 +26,9 @@ namespace GSB_gestion_cloture
         /// <param name="args"></param>
         protected override void OnStart(string[] args)
         {
+            // pour gerer le déclanchement de notre tache avec un thread plutôt qu'un timer. 
+            Task myTask = new Task(TaskLoop);
             bdd.Ouvrir();
-            tsTask = new ThreadStart(TaskLoop);
-            myTask = new Thread(tsTask);
             myTask.Start();
         }
         /// <summary>
@@ -40,22 +37,29 @@ namespace GSB_gestion_cloture
         protected override void OnStop()
         {
             bdd.Fermer();
-            myTask.Abort();
         }
 
-        public void TaskLoop()
+        public static void TaskLoop()
         {
-            while(true)
+            try
             {
-                Tasks();
-                Thread.Sleep(TimeSpan.FromHours(1)); // Relance le thread toutes les heures.
+                while(true)
+                {
+                    Tasks();
+                    Thread.Sleep(TimeSpan.FromHours(1)); // Relance le thread toutes les heures.
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 
         /// <summary>
         /// Fonction qui gére les tâches demandées 
         /// </summary>
-        public void Tasks()
+        public static void Tasks()
         {       
             try
             {
@@ -70,7 +74,6 @@ namespace GSB_gestion_cloture
                 {
                     bdd.Update("fichefrais","idetat","RB",$@"idetat = 'VA' and mois like '{moisPrecedent}'");
                 }
-  
             }
             catch (Exception ex)
             {
