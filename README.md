@@ -5,7 +5,7 @@ Le cahier des charges de l’application Frais GSB stipule que la fiche d’un v
 jour du mois. Cette clôture sera réalisée via cette application avec les modalités suivantes :
 
   - Récupération des fiches créées du mois N-1 et leur mise à jour, en les mettant à l’état ‘CL’ ;
-  en supposant que la campagne de validation va se passer entre le 1er et le 10 du mois courant, on va, en comparant les dates, s’assurer que l’on se trouve bien dans cet intervalle-là ;
+  en supposant que la campagne de validation va se passer entre le 1er et le 10 du mois courant, on va, en comparant les dates, s’assurer que l’on se trouve bien dans cet intervalle-là.
   - Et de la même manière, à partir du 20è jour du mois, on va mettre à jour les fiches validées du
   mois précédent en les passant à l’état ‘RB’.
 
