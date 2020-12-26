@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace GSB_gestion_cloture
 {
+    /// <summary>
+    /// Classe qui gére toutes les manipulations liée aux dates.
+    /// </summary>
 	public abstract class GestionDate
 	{
 		/// <summary>
@@ -28,7 +31,7 @@ namespace GSB_gestion_cloture
         }
 
         /// <summary>
-        /// Retourne le mois precedent 
+        /// Surcharge de getMoisPrecedent(): Retourne le mois precedent 
         /// </summary>
         /// <param name="uneDate">La date dont on veut le mois précédent</param>
         /// <returns>Une chaine de caractere sous format de deux chiffres</returns>
@@ -47,7 +50,7 @@ namespace GSB_gestion_cloture
         }
 
         /// <summary>
-        /// Retourne le mois suivant
+        /// Retourne le mois suivant.
         /// </summary>
         /// <returns>Une chaine de caractere sous format de deux chiffres</returns>
         public static string getMoisSuivant()
@@ -66,7 +69,7 @@ namespace GSB_gestion_cloture
         }
 
         /// <summary>
-        /// Retourne le mois suivant
+        /// Surcharge de getMoisSuivant(): Méthode qui retourne le mois suivant.
         /// </summary>
         /// <param name="uneDate">La date dont on veut le mois suivant</param>
         /// <returns>Une chaine de caractere sous format de deux chiffres</returns>
@@ -86,23 +89,23 @@ namespace GSB_gestion_cloture
         }
 
         /// <summary>
-        ///  Retourne vrai si la date actuelle se situe entre un interval de deux jours
+        /// Méthode qui dit si la date actuelle se situe entre un interval de deux jours
         /// </summary>
         /// <param name="jour1"></param>
         /// <param name="jour2"></param>
-        /// <returns>Un booeléen</returns>
+        /// <returns>Retourne true si la date actuelle se situe entre un interval de deux jours.</returns>
         public static bool entre(int jour1, int jour2)
         {
            return DateTime.Now.Day >= jour1 && DateTime.Now.Day < jour2;
         }
 
         /// <summary>
-        /// Retourne vrai si la date en parametre se situe entre un interval de deux jours
+        /// Surcharge de entre(): Méthode qui dit si la date en parametre se situe entre un interval de deux jours
         /// </summary>
         /// <param name="jour1"></param>
         /// <param name="jour2"></param>
         /// <param name="uneDate"></param>
-        /// <returns>Un booléen</returns>
+        /// <returns>Retourne true si la date actuelle se situe entre un interval de deux jours.</returns>
         public static bool entre(int jour1, int jour2, DateTime uneDate)
         {
             return uneDate.Day >= (jour1) && uneDate.Day < jour2;

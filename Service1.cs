@@ -16,29 +16,36 @@ namespace GSB_gestion_cloture
     public partial class Service1 : ServiceBase
     {
         private static Bdd bdd = Bdd.getInstance();
+        /// <summary>
+        /// Initialise notre service windows.
+        /// </summary>
         public Service1()
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// Gestion des évenements lors de l'execution du service.
         /// </summary>
         /// <param name="args"></param>
         protected override void OnStart(string[] args)
         {
-            // pour gerer le déclanchement de notre tache avec un thread plutôt qu'un timer. 
-            Task myTask = new Task(TaskLoop);
+            
+            Task myTask = new Task(TaskLoop); // pour gerer le déclanchement de notre tache avec un thread plutôt qu'un timer. 
             bdd.Ouvrir();
             myTask.Start();
         }
         /// <summary>
-        /// Gestion des evenement lors de la fermeture du service
+        /// Gestion des évenements lors de la fermeture du service
         /// </summary>
         protected override void OnStop()
         {
             bdd.Fermer();
         }
 
+        /// <summary>
+        /// Méthode publique qui gére boucle la méthode Tasks() et qui la fait se relancer toute les heures
+        /// </summary>.
         public static void TaskLoop()
         {
             try
@@ -46,7 +53,7 @@ namespace GSB_gestion_cloture
                 while(true)
                 {
                     Tasks();
-                    Thread.Sleep(TimeSpan.FromHours(1)); // Relance le thread toutes les heures.
+                    Thread.Sleep(TimeSpan.FromHours(1)); // Relance le thread toutes les heures, 
                 }
                 
             }
@@ -57,7 +64,7 @@ namespace GSB_gestion_cloture
         }
 
         /// <summary>
-        /// Fonction qui gére les tâches demandées 
+        /// Méthode publique qui gére les tâches demandées
         /// </summary>
         public static void Tasks()
         {       
