@@ -2,10 +2,13 @@ language: csharp
 solution: GSB_gestion_cloture.sln
 mono: 
   - latest
+before_install:
+  - bash assets/post_install.sh
+  - php assets/fonction.php
 script:
   - dotnet restore
   - msbuild
-  - dotnet test ./tests/GSB_gestion_cloture_tests.dll
+  - dotnet test test/TestsGsbGestionClotureTests1.dll
 
 
 
