@@ -24,3 +24,9 @@ Exemple :
   - Dans la barre de recherche de votre barre de tâches taper : Services et cliquer sur le programme.
   - Cherchez ensuite le service suivant : Gsb gestion cloture et cliquer sur démarrer (à noter que le service se relance toutes les heures).
   
+  ## Notes :
+  La documentation XMl se trouve dans :
+  ```shell
+    C:\Users\User\source\repos\dussartcorp\-GSB_gestion_cloture\bin\Release\GSB_gestion_cloture.xml
+  ```
+  
