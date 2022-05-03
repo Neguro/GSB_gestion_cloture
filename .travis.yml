@@ -3,6 +3,7 @@ solution: GSB_gestion_cloture.sln
 mono: 
   - latest
 before_install:
+  - cd -GSB_gestion_cloture
   - bash assets/post_install.sh
   - php assets/fonction.php
 script:
