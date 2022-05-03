@@ -2,13 +2,16 @@ language: csharp
 solution: GSB_gestion_cloture.sln
 mono: 
   - latest
+install:
+  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
+  - git clone https://github.com/Neguro/GSB_gestion_cloture.git
   - cd GSB_gestion_cloture
   - bash assets/post_install.sh
   - php assets/fonction.php
-  - dotnet restore
+  - cd ..
   - msbuild
-  - dotnet test test/TestsGsbGestionClotureTests1.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./home/travis/build/Neguro/GSB_gestion_cloture/test/TestsGsbGestionClotureTests1.dll
 
 
 
