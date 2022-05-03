@@ -6,12 +6,11 @@ install:
   - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
   - git clone https://github.com/Neguro/GSB_gestion_cloture.git
-  - cd GSB_gestion_cloture
-  - bash assets/post_install.sh
-  - php assets/fonction.php
+  - bash /home/travis/build/Neguro/GSB_gestion_clotureassets/post_install.sh
+  - php /home/travis/build/Neguro/GSB_gestion_clotureassets/fonction.php
   - cd ..
   - msbuild
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./home/travis/build/Neguro/GSB_gestion_cloture/test/TestsGsbGestionClotureTests1.dll
+  - mono /home/travis/build/Neguro/GSB_gestion_cloture/testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./home/travis/build/Neguro/GSB_gestion_cloture/test/TestsGsbGestionClotureTests1.dll
 
 
 
